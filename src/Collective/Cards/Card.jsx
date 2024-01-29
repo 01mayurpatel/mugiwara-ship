@@ -134,8 +134,8 @@ function Card(propers) {
 
                     <div className="cc-section-2">
                         <div className="cc-section-2-1">
-                            <p className="cc-section-2-11" id='charName' dangerouslySetInnerHTML={{ __html: charName }} ></p>
-                            <p className="cc-section-2-12" id='charTag' style={{color:tagcolor}}>{charTag}</p>
+                            <h3 className="cc-section-2-11" id='charName' dangerouslySetInnerHTML={{ __html: charName }} ></h3>
+                            <h3 className="cc-section-2-12" id='charTag' style={{color:tagcolor}}>{charTag}</h3>
                         </div>
                         <div className="cc-section-2-2">
                             <div className="cc-section-2-21">
@@ -201,8 +201,8 @@ function Card(propers) {
                         <div className="cc-section-2-22" >
                                     <div className='cc-bottom-box' style={{backgroundImage:`url(${propers.rect2})`}}>
                                                 <div className="cc-bottom-left">
-                                                    <p className="cc-status-text">STATUS</p>
-                                                    <p className="cc-alive-text">ALIVE</p>
+                                                    <h3 className="cc-status-text">STATUS</h3>
+                                                    <h3 className="cc-alive-text">ALIVE</h3>
                                                 </div>
                                                 <div className="cc-bottom-right" >
                                                     <button style={{backgroundColor : `${propers.btncolor}`}} className={`cc-animated-button ${isClicked ? 'cc-clicked' : ''} cc-bottom-right-hover${isClicked ? '1' : ''}`} id={``}
