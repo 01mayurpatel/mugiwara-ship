@@ -59,22 +59,26 @@ function Model() {
 
         if (Object.keys(animationsObj).includes(name)) {
 
-            if (!animationsObj[name].length) {
+            try {
+                if (!animationsObj[name].length) {
 
-                animation = animationMixer.clipAction(animationsObj[name])
-                animation.clampWhenFinished = true;
-                animation.setLoop(THREE.LoopOnce);
-
-            } else {
-
-                animationsObj[name].map(item => {
-
-                    const action = animationMixer.clipAction(item)
-                    action.clampWhenFinished = true;
-                    action.setLoop(THREE.LoopOnce);
-                    action.play();
-
-                })
+                    animation = animationMixer.clipAction(animationsObj[name])
+                    animation.clampWhenFinished = true;
+                    animation.setLoop(THREE.LoopOnce);
+    
+                } else {
+    
+                    animationsObj[name].map(item => {
+    
+                        const action = animationMixer.clipAction(item)
+                        action.clampWhenFinished = true;
+                        action.setLoop(THREE.LoopOnce);
+                        action.play();
+    
+                    })
+                }
+            } catch (error) {
+                
             }
 
             animation?.play()
@@ -92,57 +96,61 @@ function Model() {
 
         if (Object.keys(animationsObjHover).includes(name)) {
 
-            if (!animationsObjHover[name].length) {
+            try {
+                if (!animationsObjHover[name].length) {
 
-                animation = animationMixer.clipAction(animationsObjHover[name])
-                if (!animation.isRunning()) {
-                    animation.reset()
-                }
-                animation.setLoop(THREE.LoopOnce);
-                // animation.clampWhenFinished = true;
-
-
-
-            } else {
-
-                if (name === 'body1_body') {
-
-                    console.log('bird')
-
-                    animationsObjHover[name].map(item => {
-
-                        const action = animationMixer.clipAction(item)
-                        action.clampWhenFinished = true;
-                        action.setLoop(THREE.LoopRepeat);
-                        action.play();
-
-                    })
-                } else if (name === 'bottle') {
-                    animationsObjHover[name].map(item => {
-
-                        const action = animationMixer.clipAction(item)
-                        action.clampWhenFinished = true;
-                        action.setLoop(THREE.LoopOnce);
-                        action.play();
-
-                    })
+                    animation = animationMixer.clipAction(animationsObjHover[name])
+                    if (!animation.isRunning()) {
+                        animation.reset()
+                    }
+                    animation.setLoop(THREE.LoopOnce);
+                    // animation.clampWhenFinished = true;
+    
+    
+    
                 } else {
-
-
-                    animationsObjHover[name].map(item => {
-
-                        const action = animationMixer.clipAction(item)
-                        if (!action.isRunning()) {
-                            action.reset()
-                        }
-                        action.setLoop(THREE.LoopOnce);
-                        action.play();
-
-                    })
-
+    
+                    if (name === 'body1_body') {
+    
+                        console.log('bird')
+    
+                        animationsObjHover[name].map(item => {
+    
+                            const action = animationMixer.clipAction(item)
+                            action.clampWhenFinished = true;
+                            action.setLoop(THREE.LoopRepeat);
+                            action.play();
+    
+                        })
+                    } else if (name === 'bottle') {
+                        animationsObjHover[name].map(item => {
+    
+                            const action = animationMixer.clipAction(item)
+                            action.clampWhenFinished = true;
+                            action.setLoop(THREE.LoopOnce);
+                            action.play();
+    
+                        })
+                    } else {
+    
+    
+                        animationsObjHover[name].map(item => {
+    
+                            const action = animationMixer.clipAction(item)
+                            if (!action.isRunning()) {
+                                action.reset()
+                            }
+                            action.setLoop(THREE.LoopOnce);
+                            action.play();
+    
+                        })
+    
+                    }
                 }
+    
+            } catch (error) {
+                
             }
-
             animation?.play()
 
         }
@@ -204,6 +212,7 @@ function Model() {
 
     // DEFAULT ANIMATION MIXER
     let mixerModel
+   try {
     if (defaultAnimation.length) {
         mixerModel = new THREE.AnimationMixer(world.scene);
         defaultAnimation.forEach(clip => {
@@ -212,6 +221,9 @@ function Model() {
         });
     }
 
+   } catch (error) {
+    
+   }
     // USEFRAME
     useFrame((state, delta) => {
         mixerModel?.update(delta * 1)
