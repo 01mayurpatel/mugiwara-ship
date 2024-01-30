@@ -25,42 +25,41 @@ function Usopp() {
     popupvis.style.display = 'none';
   };
   useEffect(() => {
-    setInterval(() => {
+    
       // ... Your interval logic
 
       // UPDATE TIME HERE ******************************************
       
-    //   let hour_value = 21;
-    //   let min_value  = 12;
-    //   // ************************************************************
+      let hour_value = 21;
+      let min_value  = 12;
+      // ************************************************************
       
-    //   let hourPoint = document.getElementById('hour_point');
-    //   let min_point = document.getElementById('min_point');
-    //  if(hour_value<10){
-    //   hourPoint.innerText='0'+hour_value;
-    //  }else{
-    //   hourPoint.innerText=hour_value;
-    //  }
-    //  if(min_value<10){
-    //   min_point.innerText='0'+min_value;
-    //  }else{
-    //   min_point.innerText=min_value;
-    //  }
+      let hourPoint = document.getElementById('hour_point');
+      let min_point = document.getElementById('min_point');
+     if(hour_value<10){
+      hourPoint.innerText='0'+hour_value;
+     }else{
+      hourPoint.innerText=hour_value;
+     }
+     if(min_value<10){
+      min_point.innerText='0'+min_value;
+     }else{
+      min_point.innerText=min_value;
+     }
       
       
 
-    //   let hh = document.getElementById('hh');
+      let hh = document.getElementById('hh');
 
-    //   let hr_dot = document.querySelector('.hr_dot');
+      let hr_dot = document.querySelector('.hr_dot');
       
-    //   hh.style.strokeDashoffset = 616 - ((616 * hour_value) / 22);
+      hh.style.strokeDashoffset = 616 - ((616 * hour_value) / 22);
       
-    //   hr_dot.style.transform = `rotate(${hour_value * 16.3636}deg)`;
+      hr_dot.style.transform = `rotate(${hour_value * 16.3636}deg)`;
 
       // mayur = mayur+1;
       
 
-    },1000);
 
     // Get the SVG element
     const svg = document.getElementById("clockSvg");

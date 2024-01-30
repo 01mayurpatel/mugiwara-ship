@@ -32,49 +32,49 @@ function Luffy() {
   };
 
   useEffect(() => {
-    setInterval(() => {
+  
       // ... Your interval logic
 
       // UPDATE TIME HERE ******************************************
       
-    //   let z_hour_value = 17;
-    //   let z_min_value  = 12;
-    //   // ************************************************************
+      let z_hour_value = 17;
+      let z_min_value  = 12;
+      // ************************************************************
       
-    //   let z_hourPoint = document.getElementById('z-hour_point');
-    //   let z_min_point = document.getElementById('z-min_point');
-    //  if(z_hour_value<10){
-    //   z_hourPoint.innerText='0'+z_hour_value;
-    //  }else{
-    //   z_hourPoint.innerText=z_hour_value;
-    //  }
-    //  if(z_min_value<10){
-    //   z_min_point.innerText='0'+z_min_value;
-    //  }else{
-    //   z_min_point.innerText=z_min_value;
-    //  }
+      let z_hourPoint = document.querySelector('#z-hour_point');
+      let z_min_point = document.querySelector('#z-min_point');
+     if(z_hour_value<10){
+      z_hourPoint.innerText='0'+z_hour_value;
+     }else{
+      z_hourPoint.innerText=z_hour_value;
+     }
+     if(z_min_value<10){
+      z_min_point.innerText='0'+z_min_value;
+     }else{
+      z_min_point.innerText=z_min_value;
+     }
       
       
 
-    //   let zhh = document.getElementById('z-hh');
+      let zhh = document.getElementById('z-hh');
 
-    //   let hr_dot = document.querySelector('.hr_dot');
+      let z_hr_dot = document.querySelector('.z-hr_dot');
       
-    //   zhh.style.strokeDashoffset = 616 - ((616 * z_hour_value) / 22);
+      zhh.style.strokeDashoffset = 616 - ((616 * z_hour_value) / 22);
       
-    //   hr_dot.style.transform = `rotate(${z_hour_value * 16.3636}deg)`;
+      z_hr_dot.style.transform = `rotate(${z_hour_value * 16.3636}deg)`;
 
       // mayur = mayur+1;
       
 
-    },1000);
+   
 
     // Get the SVG element
     const svg = document.getElementById("z-clockSvg");
 
     // Create a linear emn
     const gradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
-    gradient.setAttribute("id", "strokeGradient");
+    gradient.setAttribute("id", "z-strokeGradient");
     gradient.setAttribute("x1", "0%");
     gradient.setAttribute("y1", "0%");
     gradient.setAttribute("x2", "100%");
@@ -101,7 +101,7 @@ function Luffy() {
 
     // Apply the gradient to the stroke
     const circle = svg.querySelector("circle:nth-child(2)");
-    circle.style.stroke = "url(#strokeGradient)";
+    circle.style.stroke = "url(#z-strokeGradient)";
     circle.style.strokeWidth = "6";
     circle.style.strokeDasharray = "616";
   }, []);
@@ -349,7 +349,7 @@ function Luffy() {
                           </div>
                           <div id="z-time" className="w-100 ">
                             <div className="z-circle mx-auto my-auto" >
-                              <div className="z-dots hr_dot" />
+                              <div className="z-dots z-hr_dot" />
                               <svg id="z-clockSvg">
                                 <circle cx={75} cy={75} r={98} />
                                 <circle cx={75} cy={75} r={98} id="z-hh" />
@@ -358,9 +358,9 @@ function Luffy() {
                                 <div className="z-clock-text">
                                   <p className="z-tides-rest">TIDE'S RESET</p>
                                   <div className="d-flex">
-                                    <h2 id="z-hour_point">00</h2>
+                                    <h2 id="z-hour_point">17</h2>
                                     <h2 className="px-2">:</h2>
-                                    <h2 id="z-min_point">00</h2>
+                                    <h2 id="z-min_point">52</h2>
                                   </div>
                                   <div className="d-flex">
                                     <h6 id="z-HRS">HRS</h6>

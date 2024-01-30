@@ -392,7 +392,7 @@ button:focus {
 
 
 .z-left-img-2 {
-  width: 115%;
+  height: 120%;
   
   position: absolute;
   top: -20%;
@@ -940,7 +940,7 @@ display: none;
   margin-bottom: 0px;
   background-color: #6a6aa4;
 }
-#z-myChart {
+#myChart {
 
   padding-top: 14px !important;
   /* margin-top: 15px; */
@@ -951,7 +951,7 @@ display: none;
   /* height: 80%; */
   /* margin-top: 15px; */
   margin-left: 20px;
-  max-width:450px;
+  /* max-width:450px; */
 
 }
 
@@ -1093,7 +1093,7 @@ animation: effect 10s linear infinite alternate;
     right: 1px;
     top: 11px;
   }
-  #z-myChart{
+  #myChart{
     padding-top: 2px !important;
     margin-left: 1px;
     padding-left: 4px;
@@ -1191,8 +1191,7 @@ animation: effect 10s linear infinite alternate;
   }
 
   .z-left-img-2 {
-    width: 100%;
-
+    height: 100%;
     position: absolute;
     top: -30%;
     left: 0%;
@@ -1317,7 +1316,7 @@ padding-top: 10px;
     padding-top: 0px !important;
   }
 
-  #z-myChart {
+  #myChart {
     transform: scale(1);
     /* margin-left: 0px; */
     /* padding-top: 1px; */
